@@ -1,5 +1,7 @@
 // App.js
 import mainImg from './assets/main.png';
+import logo from './assets/logo.png';
+import membershipsImg from './assets/memberships.png';
 
 import './App.css';
 
@@ -11,7 +13,9 @@ function App() {
 
       {/* Navbar */}
       <nav className='navbar'>
-        <div className='logo'>T</div>
+        <div>
+          <img src={logo} alt='logo' className='logo' />
+        </div>
         <ul className='nav-links'>
           <li>
             <a href='#'>PREMIUM HUB</a>
@@ -31,10 +35,15 @@ function App() {
         </ul>
       </nav>
 
-      {/* Buttons */}
-      <div className='button-container'>
-        <button className='coming-soon'>COMING SOON</button>
+      {/* Membership Section */}
+      <div className='memberships-section'>
+        <img src={membershipsImg} alt='Premium Memberships' className='memberships-image' />
         <button className='join-now'>JOIN NOW</button>
+      </div>
+
+      {/* Coming Soon Button */}
+      <div className='coming-soon-section'>
+        <button className='coming-soon'>COMING SOON</button>
       </div>
     </div>
   );
