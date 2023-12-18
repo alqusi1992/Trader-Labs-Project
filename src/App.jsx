@@ -5,7 +5,7 @@ import './App.css';
 
 function App() {
   return (
-    <div className='app'>
+    <div className='container-app'>
       {/* Background image */}
       <img src={mainImg} alt='Trader Labs' className='background-image' />
 
