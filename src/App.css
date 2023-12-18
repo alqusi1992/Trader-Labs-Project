@@ -1,52 +1,60 @@
+/* Base styles */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; /* This ensures padding does not affect the total width of elements */
+  box-sizing: border-box;
 }
 
 body,
 html {
+  margin: 0;
+  padding: 0;
   width: 100%;
   height: 100%;
+  overflow-x: hidden; /* Prevents horizontal scroll */
 }
 
-.app {
+.container-app {
   position: relative;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
 }
 
 .background-image {
-  width: 100vw; /* Full viewport width */
-  height: 100vh; /* Full viewport height */
-  object-fit: cover; /* Cover the entire area of the container */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: -1;
 }
 
+/* Navbar styles */
 .navbar {
   position: absolute;
-  width: 100%;
   top: 0;
-  padding: 1em 2em;
+  left: 50%; /* Center the navbar */
+  transform: translateX(-50%); /* Offset the navbar to the left by half its width */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 2; /* Above the image */
+  width: calc(100% - 40px); /* Leave 20px space on each side */
+  max-width: 1700px;
+  padding: 1em;
+  z-index: 2;
+  /* background-color: rgba(0, 0, 0, 0.7); Semi-transparent background */
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); Optional shadow for depth */
 }
 
 .logo {
   color: white;
-  /* Add additional styles for the logo */
+  font-size: 2em; /* Adjust size accordingly */
 }
 
 .nav-links {
   list-style: none;
+  display: flex;
 }
 
 .nav-links li {
-  display: inline;
   margin: 0 1em;
 }
 
@@ -56,11 +64,12 @@ html {
   font-weight: bold;
 }
 
+/* Buttons at the bottom */
 .button-container {
   position: absolute;
-  bottom: 20px; /* Adjust as needed */
-  left: 20px; /* Adjust as needed */
-  z-index: 3; /* Above the image */
+  bottom: 20px;
+  left: 20px;
+  z-index: 3;
 }
 
 button {
@@ -84,41 +93,4 @@ button {
 
 button:hover {
   opacity: 0.8;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0;
-  }
-
-  .nav-links a {
-    padding: 5px 0; /* Add padding for tap targets */
-  }
-
-  .buttons {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  button {
-    width: 100%; /* Full width buttons on mobile */
-    margin: 5px 0; /* Add space between buttons */
-  }
-}
-
-.background-image {
-  width: 100%;
-  height: auto; /* Keep the aspect ratio */
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1; /* Ensure the image is behind everything */
 }
