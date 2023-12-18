@@ -10,6 +10,11 @@ body {
   font-size: montserrat;
 }
 
+.container-app {
+  position: relative;
+  height: 100vh;
+}
+
 nav {
   background: #171717;
   height: 80px;
@@ -70,8 +75,90 @@ section img {
   width: 100%;
   height: 100vh;
   background-position: center;
+  position: relative;
+  z-index: -1;
 }
 
+.memberships-image {
+  max-width: 540px; /* Adjust based on your layout */
+  height: 105px;
+  display: block;
+  border-radius: 10px;
+}
+.memberships-section {
+  position: absolute;
+  top: 93.2%; /* Adjust as needed */
+  left: 80%; /* Adjust as needed */
+  transform: translate(-50%, -50%); /* Center the section */
+  z-index: 2; /* Ensure it's above the background */
+  /* width: 100vw;  */
+}
+
+.join-now {
+  position: absolute;
+  bottom: 25px; /* Adjust as needed */
+  right: 15px; /* Adjust as needed */
+  /* Other button styles */
+
+  background-color: white; /* White background */
+  color: black; /* Black text */
+  padding: 15px 20px; /* Adjust padding as needed */
+  border: none; /* Remove border or adjust as needed */
+  font-weight: bold; /* Bold text */
+  cursor: pointer; /* Cursor changes to a hand symbol when hovering over the button */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  border-radius: 5px; /* Rounded corners */
+  border: 1px solid #ccc;
+}
+
+.join-now:hover {
+  background-color: #43b110; /* Slightly darker white when hovered */
+  color: black;
+}
+
+.coming-soon-section {
+  position: absolute;
+  bottom: 34px;
+  right: 54%;
+  z-index: -1;
+}
+
+.coming-soon {
+  background-color: white; /* White background */
+  color: black; /* Black text */
+  padding: 15px 20px; /* Adjust padding as needed */
+  border: none; /* Remove border or adjust as needed */
+  font-weight: bold; /* Bold text */
+  cursor: pointer; /* Cursor changes to a hand symbol when hovering over the button */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  border-radius: 5px; /* Rounded corners */
+  border: 1px solid #ccc;
+}
+@media (max-width: 1024px) {
+  .memberships-section {
+    /* Adjust positioning and/or size for iPad screens */
+    top: 89%; /* Example adjustment */
+    left: 75%;
+    transform: translate(-50%, -40%);
+  }
+
+  .memberships-image {
+    max-width: 450px; /* Smaller width on iPad */
+    height: 155px; /* Maintain aspect ratio */
+  }
+
+  .join-now {
+    /* Adjust button size and position if needed */
+    bottom: 35px;
+    right: 20px;
+    padding: 18px 25px;
+  }
+
+  .coming-soon {
+    padding: 15px 12px;
+    margin-bottom: 60px;
+  }
+}
 @media (max-width: 952px) {
   .logo {
     margin-left: 30px;
@@ -115,5 +202,47 @@ section img {
 
   #check:checked ~ ul {
     left: 0;
+  }
+}
+
+@media (max-width: 740px) {
+  section img {
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+  }
+  section {
+    background: #171717;
+  }
+}
+
+@media (max-width: 600px) {
+  .memberships-section {
+    position: absolute;
+    z-index: -1;
+    top: auto;
+    bottom: 1.3%;
+    left: 75%;
+    transform: translateX(-50%);
+    width: 45%;
+  }
+
+  .memberships-image {
+    max-width: 100%;
+    height: 105px;
+  }
+
+  .join-now {
+    font-size: 9px;
+    padding: 10px 5px;
+    margin-right: -15px;
+    margin-bottom: -4px;
+  }
+
+  .coming-soon {
+    font-size: 9px;
+    padding: 10px 1px;
+    margin-right: -15px;
+    margin-bottom: 8px;
   }
 }

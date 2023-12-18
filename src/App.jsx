@@ -44,15 +44,15 @@ function App() {
         <img src={mainImg} alt='Trader Labs' />
       </section>
       {/* Membership Section */}
-      {/* <div className='memberships-section'>
+      <div className='memberships-section'>
         <img src={membershipsImg} alt='Premium Memberships' className='memberships-image' />
         <button className='join-now'>JOIN NOW</button>
-      </div> */}
+      </div>
 
       {/* Coming Soon Button */}
-      {/* <div className='coming-soon-section'>
+      <div className='coming-soon-section'>
         <button className='coming-soon'>COMING SOON</button>
-      </div> */}
+      </div>
     </div>
   );
 }
