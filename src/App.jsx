@@ -9,16 +9,22 @@ function App() {
   return (
     <div className='container-app'>
       {/* Background image */}
-      <img src={mainImg} alt='Trader Labs' className='background-image' />
 
       {/* Navbar */}
       <nav className='navbar'>
-        <div>
-          <img src={logo} alt='logo' className='logo' />
-        </div>
+        <input type='checkbox' id='check' />
+        <label htmlFor='check' className='checkbtn'>
+          <i className='fas fa-bars'></i> Check
+        </label>
+        <label>
+          {' '}
+          <img src={logo} className='logo' />
+        </label>
         <ul className='nav-links'>
           <li>
-            <a href='#'>PREMIUM HUB</a>
+            <a className='active' href='#'>
+              PREMIUM HUB
+            </a>
           </li>
           <li>
             <a href='#'>MANIFESTO</a>
@@ -34,17 +40,19 @@ function App() {
           </li>
         </ul>
       </nav>
-
+      <section>
+        <img src={mainImg} alt='Trader Labs' />
+      </section>
       {/* Membership Section */}
-      <div className='memberships-section'>
+      {/* <div className='memberships-section'>
         <img src={membershipsImg} alt='Premium Memberships' className='memberships-image' />
         <button className='join-now'>JOIN NOW</button>
-      </div>
+      </div> */}
 
       {/* Coming Soon Button */}
-      <div className='coming-soon-section'>
+      {/* <div className='coming-soon-section'>
         <button className='coming-soon'>COMING SOON</button>
-      </div>
+      </div> */}
     </div>
   );
 }
