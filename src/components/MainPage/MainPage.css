@@ -28,26 +28,44 @@ nav {
 nav ul {
   float: right;
   margin-right: 20px;
+  margin-top: 30px;
 }
 
 nav ul li {
   display: inline-block;
-  line-height: 80px;
-  margin: 0 5px;
+  background-color: #3e3e3e;
+  margin: 0 10px;
+  border-radius: 5px;
 }
 
 nav ul li a {
   color: white;
   font-size: 17px;
-  padding: 7px 13px;
+  padding: 10px 15px;
   border-radius: 3px;
   text-transform: uppercase;
+  font-family: 'LEKTON', sans-serif;
+  text-decoration: none;
+  display: block;
+  background-color: transparent; /* No background color initially */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-a.active,
-a:hover {
-  background: #1b9bff;
-  transition: 0.5s;
+nav ul li a:hover {
+  background-color: #c03540; /* Background becomes red */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+nav ul li {
+  animation: fadeIn 4s ease-in-out;
 }
 
 .checkbtn {
@@ -82,52 +100,69 @@ section img {
 }
 .memberships-section {
   position: absolute;
-  top: 93.2%; /* Adjust as needed */
-  left: 80%; /* Adjust as needed */
-  transform: translate(-50%, -50%); /* Center the section */
-  z-index: 2; /* Ensure it's above the background */
-  /* width: 100vw;  */
+  top: 93.2%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  animation: fadeInUp 1s ease-in-out; /* Apply the animation */
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(100%); /* Start below the original position */
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0); /* End at the original position */
+    opacity: 1;
+  }
 }
 
 .join-now {
   position: absolute;
-  bottom: 25px; /* Adjust as needed */
-  right: 15px; /* Adjust as needed */
-  /* Other button styles */
+  bottom: 25px;
+  right: 15px;
 
   background-color: white; /* White background */
   color: black; /* Black text */
-  padding: 15px 20px; /* Adjust padding as needed */
-  border: none; /* Remove border or adjust as needed */
-  font-weight: bold; /* Bold text */
-  cursor: pointer; /* Cursor changes to a hand symbol when hovering over the button */
-  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-  border-radius: 5px; /* Rounded corners */
+  padding: 15px 20px;
+  border: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Add transform to the transition property */
+  border-radius: 5px;
   border: 1px solid #ccc;
+  cursor: pointer;
+  /* Add a slight shadow for depth (optional) */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .join-now:hover {
-  background-color: #43b110; /* Slightly darker white when hovered */
-  color: black;
+  background-color: #a9a9a9; /* Grey out the button on hover */
+  /* Scale up the button a bit */
+  transform: scale(1.09);
+  color: white !important;
 }
-
 .coming-soon-section {
   position: absolute;
   bottom: 34px;
   right: 54%;
-  z-index: -1;
 }
 
 .coming-soon {
-  background-color: white; /* White background */
-  color: black; /* Black text */
-  padding: 15px 20px; /* Adjust padding as needed */
-  border: none; /* Remove border or adjust as needed */
-  font-weight: bold; /* Bold text */
-  cursor: pointer; /* Cursor changes to a hand symbol when hovering over the button */
-  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-  border-radius: 5px; /* Rounded corners */
-  border: 1px solid #ccc;
+  background-color: white;
+  color: black;
+  padding: 15px 20px;
+  border: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+  border: 1px solid #a9a9a9;
+  cursor: pointer;
+}
+
+.coming-soon:hover {
+  background-color: #a9a9a9; /* Grey color when hovered */
+  color: white; /* Change text color if needed */
 }
 @media (max-width: 1024px) {
   .memberships-section {
@@ -233,7 +268,9 @@ section img {
     margin-right: -15px;
     margin-bottom: -4px;
   }
-
+  .coming-soon-section {
+    z-index: -1;
+  }
   .coming-soon {
     font-size: 9px;
     padding: 10px 1px;
