@@ -14,8 +14,9 @@ function MainPage() {
           <FontAwesomeIcon icon={faBars} style={{ color: '#f1f2f3' }} />
         </label>
         <label>
-          {' '}
-          <img src={logo} className='logo' />
+          <a href='/'>
+            <img src={logo} className='logo' alt='Home' />
+          </a>
         </label>
         <ul className='nav-links'>
           <li>

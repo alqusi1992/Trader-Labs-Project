@@ -4,10 +4,7 @@
   text-decoration: none !important;
   list-style: none !important;
   box-sizing: border-box;
-}
-
-body {
-  font-size: montserrat;
+  font-family: 'LEKTON', sans-serif;
 }
 
 nav {
@@ -44,7 +41,6 @@ nav ul li a {
   padding: 10px 15px;
   border-radius: 3px;
   text-transform: uppercase;
-  font-family: 'LEKTON', sans-serif;
   text-decoration: none;
   display: block;
   background-color: transparent; /* No background color initially */
@@ -121,11 +117,11 @@ section img {
 .join-now {
   position: absolute;
   bottom: 25px;
-  right: 15px;
+  right: 45px;
 
   background-color: white; /* White background */
   color: black; /* Black text */
-  padding: 15px 20px;
+  padding: 12px 24px;
   border: none;
   font-weight: bold;
   transition: background-color 0.3s ease, transform 0.3s ease; /* Add transform to the transition property */
@@ -145,13 +141,13 @@ section img {
 .coming-soon-section {
   position: absolute;
   bottom: 34px;
-  right: 54%;
+  right: 56%;
 }
 
 .coming-soon {
   background-color: white;
   color: black;
-  padding: 15px 20px;
+  padding: 12px 24px;
   border: none;
   font-weight: bold;
   transition: background-color 0.3s ease;
