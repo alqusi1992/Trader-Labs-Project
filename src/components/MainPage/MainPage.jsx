@@ -1,4 +1,4 @@
-import mainImg from '../../assets/main.png';
+import mainImg from '../../assets/1.png';
 import logo from '../../assets/logo.png';
 import membershipsImg from '../../assets/memberships.png';
 import './MainPage.css';
