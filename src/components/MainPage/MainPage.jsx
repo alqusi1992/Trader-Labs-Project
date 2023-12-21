@@ -38,7 +38,7 @@ function MainPage() {
           </li>
         </ul>
       </nav>
-      <section>
+      <section className='mainPage'>
         <img src={mainImg} alt='Trader Labs' />
       </section>
       {/* Membership Section */}
