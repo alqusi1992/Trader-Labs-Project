@@ -5,8 +5,8 @@ function Vision() {
   return (
     <div>
       {' '}
-      <section>
-        <img src={vision} alt='Trader Labs' className='vision' />
+      <section className='vision'>
+        <img src={vision} alt='Trader Labs' />
       </section>
     </div>
   );

@@ -7,31 +7,38 @@
   font-family: 'LEKTON', sans-serif;
 }
 
-nav {
-  background: #171717;
-  height: 80px;
-  width: 100%;
+body {
+  padding-top: 80px; /* This should be equal to or greater than the height of your navbar */
 }
-
 .logo {
   max-width: 60px;
   height: auto;
   padding: 2px;
-
   margin-left: 120px;
   margin-top: 15px;
 }
 
+nav {
+  background: #171717;
+  height: 80px;
+  width: 100%;
+  position: fixed; /* Fixes the navbar at the top */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
 nav ul {
   float: right;
-  margin-right: 20px;
+  margin-right: 150px;
   margin-top: 30px;
 }
 
 nav ul li {
   display: inline-block;
   background-color: #3e3e3e;
-  margin: 0 10px;
+  margin: 0 15px;
+  /* padding: 1px 13px; */
   border-radius: 5px;
 }
 
@@ -235,12 +242,12 @@ nav ul li {
 }
 
 @media (max-width: 740px) {
-  section img {
+  .mainPage img {
     height: 100vh;
     position: absolute;
     z-index: -1;
   }
-  section {
+  .mainPage {
     background: #171717;
   }
 }
