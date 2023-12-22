@@ -31,7 +31,7 @@ nav {
 nav ul {
   float: right;
   margin-right: 150px;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 nav ul li {
@@ -103,7 +103,7 @@ nav ul li {
 }
 .memberships-section {
   position: absolute;
-  top: 93.2%;
+  top: 83.5%;
   left: 80%;
   transform: translate(-50%, -50%);
   z-index: 2;
@@ -148,7 +148,7 @@ nav ul li {
 }
 .coming-soon-section {
   position: absolute;
-  bottom: 34px;
+  bottom: 115px;
   right: 56%;
 }
 
