@@ -3,7 +3,7 @@ import DatabaseBanner from '../../assets/database-banner.png';
 import DiscordBanner from '../../assets/discord-banner.png';
 import ManifestoBanner from '../../assets/manifesto-Banner.png';
 
-import PremiumHubBanner from '../../assets/Premium-hub-Banner.jpg';
+import PremiumHubBanner from '../../assets/Premium-hub-Banner.png';
 
 import RoadmapBanner from '../../assets/roadmap-banner.png';
 
