@@ -1,0 +1,9 @@
+.Risk img {
+  background-size: cover;
+
+  width: 100vw;
+  height: 100vh;
+  background-position: center;
+  position: relative;
+  z-index: -1;
+}
