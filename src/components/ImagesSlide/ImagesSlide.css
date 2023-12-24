@@ -36,7 +36,7 @@
   justify-content: center;
   padding: 10px 0; /* Padding for the text */
   font-size: 3.7em; /* Adjust font size to make the text bigger */
-  font-family: fantasy;
+  font-family: Rubik Mono;
 
   transform: translateY(100%); /* Start hidden below the image */
   transition: transform 0.3s ease; /* Animate the transform property */
