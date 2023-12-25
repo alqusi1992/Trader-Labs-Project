@@ -24,6 +24,52 @@
   transition: filter 0.1s ease;
 }
 
+@media only screen and (max-width: 600px) {
+  .ImagesSlide {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .image-container {
+    flex: none;
+    width: 100vw;
+    scroll-snap-align: start;
+    position: relative;
+  }
+
+  img.image {
+    width: 100%;
+    height: auto;
+  }
+
+  .slider-indicators {
+    display: flex;
+    justify-content: center;
+    padding: 6px;
+    background-color: #171717;
+  }
+
+  .indicator {
+    width: 30px;
+    height: 6px;
+    background-color: #ccc;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .indicator.active {
+    background-color: #333;
+    height: 12px; /* Make active indicator larger */
+  }
+
+  /* Hover effect */
+  .indicator:hover {
+    background-color: #666;
+  }
+}
+
 .overlay-text {
   position: absolute;
   width: 100%; /* Overlay covers the whole image width */
