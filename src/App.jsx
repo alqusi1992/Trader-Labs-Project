@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import './App.css';
 import MainPage from './components/MainPage/MainPage.jsx';
@@ -33,6 +33,29 @@ function App() {
     };
   }, [showScrollButton]);
 
+  const [activeSection, setActiveSection] = useState(0);
+  const sectionsRef = useRef([]);
+
+  const scrollToSection = (index) => {
+    sectionsRef.current[index].scrollIntoView({ behavior: 'smooth' });
+    setActiveSection(index);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentSectionIndex = sectionsRef.current.findIndex((section) => {
+        const rect = section.getBoundingClientRect();
+        return rect.top >= 0 && rect.top < window.innerHeight;
+      });
+      if (currentSectionIndex !== -1 && currentSectionIndex !== activeSection) {
+        setActiveSection(currentSectionIndex);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [activeSection]);
+
   return (
     <div className='container-app'>
       {showScrollButton && (
@@ -40,11 +63,35 @@ function App() {
           ↑
         </button>
       )}
-      <MainPage />
-      <Vision />
-      <LastWeek />
-      <ImagesSlide />
-      <Risk />
+      <section>
+        <section ref={(el) => (sectionsRef.current[0] = el)}>
+          <MainPage />
+        </section>
+        <section ref={(el) => (sectionsRef.current[1] = el)}>
+          <Vision />
+        </section>
+        <section ref={(el) => (sectionsRef.current[2] = el)}>
+          <LastWeek />
+        </section>
+        <section ref={(el) => (sectionsRef.current[3] = el)}>
+          <ImagesSlide />
+        </section>
+        <section ref={(el) => (sectionsRef.current[4] = el)}>
+          <Risk />
+        </section>
+        {/* Indicators */}
+        <div className='scroll-indicators-main-page'>
+          {Array(5)
+            .fill()
+            .map((_, index) => (
+              <div
+                key={index}
+                className={`indicator-main-page ${index === activeSection ? 'active' : ''}`}
+                onClick={() => scrollToSection(index)}
+              ></div>
+            ))}
+        </div>
+      </section>
     </div>
   );
 }
