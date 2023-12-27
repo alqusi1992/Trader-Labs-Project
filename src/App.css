@@ -1,5 +1,6 @@
 html {
   scroll-snap-type: y mandatory;
+  background-color: #171717;
 }
 
 .container-app {
@@ -52,4 +53,20 @@ section {
 #scrollToTopBtn:hover {
   opacity: 1;
   transform: scale(1.1); /* Slightly larger on hover */
+}
+
+/* Initial state of sections */
+.vision-section,
+.last-week-section,
+.images-slide-section,
+.risk-section {
+  opacity: 0;
+  transform: scale(0.8); /* Start from a slightly smaller scale */
+  transition: opacity 0.6s ease-out, transform 0.8s ease-out;
+}
+
+/* Class to be added when section is in view */
+.section-visible {
+  opacity: 1;
+  transform: scale(1);
 }

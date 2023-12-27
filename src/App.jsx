@@ -56,6 +56,22 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [activeSection]);
 
+  // fade-in scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      sectionsRef.current.forEach((section) => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const triggerPoint = window.innerHeight / 1.1; // Adjust this value as needed
+
+        if (sectionTop <= triggerPoint) {
+          section.classList.add('section-visible');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   return (
     <div className='container-app'>
       {showScrollButton && (
@@ -64,19 +80,19 @@ function App() {
         </button>
       )}
       <section>
-        <section ref={(el) => (sectionsRef.current[0] = el)}>
+        <section className='main-page-section' ref={(el) => (sectionsRef.current[0] = el)}>
           <MainPage />
         </section>
-        <section ref={(el) => (sectionsRef.current[1] = el)}>
+        <section className='vision-section' ref={(el) => (sectionsRef.current[1] = el)}>
           <Vision />
         </section>
-        <section ref={(el) => (sectionsRef.current[2] = el)}>
+        <section className='last-week-section' ref={(el) => (sectionsRef.current[2] = el)}>
           <LastWeek />
         </section>
-        <section ref={(el) => (sectionsRef.current[3] = el)}>
+        <section className='images-slide-section' ref={(el) => (sectionsRef.current[3] = el)}>
           <ImagesSlide />
         </section>
-        <section ref={(el) => (sectionsRef.current[4] = el)}>
+        <section className='risk-section' ref={(el) => (sectionsRef.current[4] = el)}>
           <Risk />
         </section>
         {/* Indicators */}
