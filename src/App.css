@@ -37,25 +37,24 @@ section {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #007bff; /* Bright blue for contrast */
+  background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 50%; /* Circular button */
+  border-radius: 50%;
   padding: 10px;
   cursor: pointer;
   opacity: 0.8;
   z-index: 1000;
-  font-size: 24px; /* Larger icon */
+  font-size: 24px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s, opacity 0.3s; /* Smooth transitions */
+  transition: transform 0.3s, opacity 0.3s;
 }
 
 #scrollToTopBtn:hover {
   opacity: 1;
-  transform: scale(1.1); /* Slightly larger on hover */
+  transform: scale(1.1);
 }
 
-/* Initial state of sections */
 .vision-section,
 .last-week-section,
 .images-slide-section,
